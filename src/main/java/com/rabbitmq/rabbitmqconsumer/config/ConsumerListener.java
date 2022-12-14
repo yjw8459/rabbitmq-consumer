@@ -17,4 +17,9 @@ public class ConsumerListener {
     public void receiveMessage(final Message message) {
         log.info(message.toString());
     }
+
+    @RabbitListener(queues = "test.queue")
+    public void testMessage(final Message message) {
+        log.info(message.toString());
+    }
 }
